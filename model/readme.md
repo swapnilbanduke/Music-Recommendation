@@ -1,7 +1,7 @@
-# Define safe backtick string
+# Define triple backtick for markdown formatting
 tick = "```"
 
-# List of lines for the README content
+# Define the lines of the README
 readme_lines = [
 "# 🎭 Emotion-Based Music Recommender Suite 🎶",
 "",
@@ -141,3 +141,5 @@ f"{tick}",
 # Save to markdown file
 with open("Emotion_Music_Recommender_README.md", "w", encoding="utf-8") as f:
     f.write("\n".join(readme_lines))
+
+print("✅ README.md created successfully!")
