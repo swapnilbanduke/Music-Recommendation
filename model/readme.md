@@ -1,145 +1,128 @@
-# Define triple backtick for markdown formatting
-tick = "```"
+# 🎶 Music Models Collection
 
-# Define the lines of the README
-readme_lines = [
-"# 🎭 Emotion-Based Music Recommender Suite 🎶",
-"",
-"A collection of deep-learning projects that **detect emotions from faces or audio and then recommend or classify music accordingly**.",
-"Built with **TensorFlow/Keras, OpenCV, and Librosa**.",
-"",
-"---",
-"",
-"## 🗂️ Repository Structure",
-"",
-f"{tick}text",
-"Model/",
-"├─ Emotion-Based-Music-Recommender/",
-"│  ├─ emotion_model.ipynb",
-"│  └─ README.md            ← facial-emotion ➜ song-recommender notebook",
-"├─ Spotify-Emotion-Predictor/",
-"│  ├─ spotify_emotion_classifier.ipynb",
-"│  └─ README.md            ← 278 k-track audio-emotion classifier notebook",
-"└─ Music-Genre-Classification/",
-"   ├─ music_genre_classifier.ipynb",
-"   └─ README.md            ← multi-genre audio classifier notebook",
-"README.md                  ← (this file – master overview)",
-"LICENSE",
-"requirements.txt",
-f"{tick}",
-"",
-"*Each sub-folder contains its own notebook and a slim README (replicated below) with dataset links and usage instructions.*",
-"",
-"---",
-"",
-"## 🚀 Quick Global Setup",
-"",
-f"{tick}bash",
-"git clone <repo-url>",
-"cd <repo-dir>",
-"pip install -r requirements.txt",
-f"{tick}",
-"",
-"> **Python ≥ 3.8** is recommended.",
-"",
-"---",
-"",
-"## 1️⃣ Emotion-Based Music Recommender",
-"",
-"| Item | Details |",
-"|------|---------|",
-"| **Task** | Detect facial emotion via webcam/image and suggest mood-matching songs |",
-"| **Backbone** | ResNet50V2 (fine-tuned) |",
-"| **Datasets** | FER-2013 (faces) + custom Spotify mood mapping |",
-"| **Core Libraries** | TensorFlow / Keras, OpenCV, NumPy, Pandas |",
-"| **Top-1 Accuracy** | **96.6 %** |",
-"",
-"### Run the Notebook",
-f"{tick}bash",
-"cd Model/Emotion-Based-Music-Recommender",
-"jupyter notebook",
-"# open and execute emotion_model.ipynb",
-f"{tick}",
-"",
-"---",
-"",
-"## 2️⃣ 278 k-Track Spotify Emotion Predictor",
-"",
-"| Item | Details |",
-"|------|---------|",
-"| **Task** | Classify audio tracks into emotion categories |",
-"| **Model** | Hybrid CNN + LSTM |",
-"| **Dataset** | 278 000 Spotify tracks labeled with emotions |",
-"| **Feature Extract** | Librosa (MFCCs, chroma, spectral contrast, etc.) |",
-"| **Top-1 Accuracy** | **92.4 %** |",
-"",
-"### Run the Notebook",
-f"{tick}bash",
-"cd Model/Spotify-Emotion-Predictor",
-"jupyter notebook",
-"# open and execute spotify_emotion_classifier.ipynb",
-f"{tick}",
-"",
-"---",
-"",
-"## 3️⃣ Music Information Retrieval & Genre Classification",
-"",
-"| Item | Details |",
-"|------|---------|",
-"| **Task** | Multi-class genre classification |",
-"| **Model** | CNN on mel-spectrograms |",
-"| **Dataset** | Public MIR genre dataset |",
-"| **Feature Extract** | Librosa (spectrograms, MFCCs) |",
-"| **Top-1 Accuracy** | **89.7 %** |",
-"",
-"### Run the Notebook",
-f"{tick}bash",
-"cd Model/Music-Genre-Classification",
-"jupyter notebook",
-"# open and execute music_genre_classifier.ipynb",
-f"{tick}",
-"",
-"---",
-"",
-"## 🏆 Results at a Glance",
-"",
-"| Model | Validation Accuracy |",
-"|-----------------------------|---------------------|",
-"| Emotion-Based Recommender (faces) | **96.6 %** |",
-"| Spotify Emotion Classifier (278 k tracks) | **92.4 %** |",
-"| Genre Classifier (MIR dataset) | **89.7 %** |",
-"",
-"---",
-"",
-"## 🔮 Next Steps",
-"",
-"1. Organize notebooks in folders shown above.",
-"2. Download all datasets as described in respective README files.",
-"3. Commit and push:",
-f"{tick}bash",
-"git add Model/",
-"git commit -m \"Add emotion & genre models with READMEs\"",
-"git push origin main",
-f"{tick}",
-"",
-"Future enhancements:",
-"- Add attention mechanisms or transformers.",
-"- Integrate real-time webcam/audio pipeline.",
-"- Dockerize models for deployment.",
-"",
-"---",
-"",
-"## 📜 License",
-"This repository is released under the **MIT License** – see [LICENSE](LICENSE).",
-"",
-"---",
-"",
-"> Made with 🎧, ☕, and ❤️ by **Swapnil Banduke**  \n",
-"> 📧 swapnilbanduke10@gmail.com   |   📱 +1 469-427-1328"
-]
+This repository contains three distinct music-related models, each with its own folder and README. Below is an overview of each model, the final folder structure, and next steps to get everything organized and running.
 
-# Save to markdown file
-with open("Emotion_Music_Recommender_README.md", "w", encoding="utf-8") as f:
-    f.write("\n".join(readme_lines))
+---
 
-print("✅ README.md created successfully!")
+## 1. Emotion-Based Music Recommender
+
+### 📌 Overview
+A facial-emotion detection model built on **ResNet50v2** that recommends Spotify songs based on detected emotions such as Happy, Sad, Angry, and Neutral.
+
+### 📊 Model Details
+- **Architecture:** ResNet50v2 (fine-tuned)
+- **Datasets:** FER (Facial Emotion Recognition), Spotify Emotion Dataset
+- **Libraries:** TensorFlow, Keras, OpenCV, NumPy, Pandas
+- **Accuracy:** 96.6%
+
+### 📥 How to Run
+1. Clone this repository and navigate to the folder:
+```bash
+cd Model/Emotion-Based-Music-Recommender
+```
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+3. Run Jupyter Notebook:
+```bash
+jupyter notebook emotion_model.ipynb
+```
+
+---
+
+## 2. Spotify Emotion Classifier
+
+### 📌 Overview
+This model classifies Spotify songs into emotion categories (Happy, Sad, Energetic, Calm) using deep learning and audio features extracted with Librosa.
+
+### 📊 Model Details
+- **Model Type:** LSTM/CNN hybrid
+- **Dataset:** 278,000 Emotion-Labeled Spotify Songs
+- **Feature Extraction:** Librosa (MFCCs, Chroma Features, Spectral Contrast)
+- **Libraries:** TensorFlow, Librosa, Pandas, NumPy, Scikit-learn
+- **Accuracy:** 92.4%
+
+### 📥 How to Run
+1. Navigate to the directory:
+```bash
+cd Model/Spotify-Emotion-Predictor
+```
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+3. Run Jupyter Notebook:
+```bash
+jupyter notebook spotify_emotion_classifier.ipynb
+```
+
+---
+
+## 3. Music Genre Classifier
+
+### 📌 Overview
+A CNN-based model performing multiclass genre classification of music using Librosa-extracted audio features.
+
+### 📊 Model Details
+- **Model Type:** CNN
+- **Dataset:** MIR (Music Information Retrieval) Dataset
+- **Feature Extraction:** Spectrograms, MFCCs
+- **Libraries:** TensorFlow, Keras, NumPy, Pandas, Librosa
+- **Accuracy:** 89.7%
+
+### 📥 How to Run
+1. Enter the directory:
+```bash
+cd Model/Music-Genre-Classification
+```
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+3. Launch the notebook:
+```bash
+jupyter notebook music_genre_classifier.ipynb
+```
+
+---
+
+## 📁 Final Folder Structure
+
+```
+Model/
+├── Emotion-Based-Music-Recommender/
+│   ├── emotion_model.ipynb
+│   └── README.md
+│
+├── Spotify-Emotion-Predictor/
+│   ├── spotify_emotion_classifier.ipynb
+│   └── README.md
+│
+└── Music-Genre-Classification/
+    ├── music_genre_classifier.ipynb
+    └── README.md
+```
+
+---
+
+## ✅ Next Steps
+
+1. **Ensure each `.ipynb` file** is placed into its respective subfolder.
+2. **Verify each README.md file** in its designated folder.
+3. **Commit and Push to GitHub**:
+```bash
+git add Model/
+git commit -m "Added music models and README files"
+git push origin main
+```
+
+---
+
+## 📜 License
+All projects are licensed under the [MIT License](LICENSE). See each project's LICENSE file for details.
+
+---
+
+## 🛠️ Contribution
+Feel free to open an issue or submit a pull request for improvements and suggestions!
