@@ -58,6 +58,31 @@ DISPLAY_COLS = ["name", "artist", "popularity", "preview_url"]  # order
 # ──────────────────────────────────────────────
 st.sidebar.title("🎶 Emotion-Based Music Recommender")
 
+import os
+from pathlib import Path
+import gdown
+
+MODEL_DIR = Path(__file__).parent / "model"
+MODEL_DIR.mkdir(exist_ok=True)
+
+# Google Drive file IDs
+CNN_MODEL_ID = "1SCxwPhGMxNtAt7J4UFkhbH1IKbHPINvL"
+RESNET_MODEL_ID = "1EUdkC5bNoQDfjhAx6Uf7HpTD0XCSBMIB"
+
+CNN_MODEL_PATH = MODEL_DIR / "CNN_Model.h5"
+RESNET_MODEL_PATH = MODEL_DIR / "ResNet50V2_Model.h5"
+
+def download_if_missing(model_path, file_id):
+    if not model_path.exists():
+        url = f"https://drive.google.com/uc?id={file_id}"
+        gdown.download(url, str(model_path), quiet=False)
+        print(f"Downloaded {model_path.name} from Google Drive!")
+
+download_if_missing(CNN_MODEL_PATH, CNN_MODEL_ID)
+download_if_missing(RESNET_MODEL_PATH, RESNET_MODEL_ID)
+
+
+
 available_models = [p.name for p in MODEL_DIR.glob("*.h5")]
 if not available_models:
     st.sidebar.error("No .h5 models found inside `/model`.")
