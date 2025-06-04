@@ -1,8 +1,8 @@
 numpy==1.23.5
 pandas==1.5.3
-matplotlib 
-seaborn 
-librosa 
+matplotlib
+seaborn
+librosa
 scikit-learn
 xgboost
 opencv-python
