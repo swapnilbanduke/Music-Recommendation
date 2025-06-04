@@ -7,3 +7,5 @@ scikit-learn
 xgboost
 opencv-python
 tensorflow<2.11
+gdown
+
