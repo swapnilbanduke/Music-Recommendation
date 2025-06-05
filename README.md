@@ -6,6 +6,9 @@ This repository contains three distinct music-related models, each with its own 
 ![Demo](2.png)
 ![Demo](3.png)
 ![Demo](4.png)
+
+[![Watch the demo](https://img.youtube.com/vi/AoSP1-LiaRU/0.jpg)](https://youtu.be/AoSP1-LiaRU)
+
 ---
 
 ## 1. Emotion-Based Music Recommender
