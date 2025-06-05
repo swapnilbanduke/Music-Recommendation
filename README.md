@@ -2,12 +2,15 @@
 
 This repository contains three distinct music-related models, each with its own folder and README. Below is an overview of each model, the final folder structure, and next steps to get everything organized and running.
 
+![Watch the demo](https://img.youtube.com/vi/AoSP1-LiaRU/0.jpg)](https://youtu.be/AoSP1-LiaRU)
+
+
 ![Demo](1.png)
 ![Demo](2.png)
 ![Demo](3.png)
 ![Demo](4.png)
 
-[![Watch the demo](https://img.youtube.com/vi/AoSP1-LiaRU/0.jpg)](https://youtu.be/AoSP1-LiaRU)
+
 
 ---
 
