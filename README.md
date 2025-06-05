@@ -2,10 +2,10 @@
 
 This repository contains three distinct music-related models, each with its own folder and README. Below is an overview of each model, the final folder structure, and next steps to get everything organized and running.
 
-![Demo](images/screenshot.png)
-![Demo](images/screenshot.png)
-![Demo](images/screenshot.png)
-![Demo](images/screenshot.png)
+![Demo](1.png)
+![Demo](2.png)
+![Demo](3.png)
+![Demo](4.png)
 ---
 
 ## 1. Emotion-Based Music Recommender
